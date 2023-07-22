@@ -14,14 +14,19 @@ const SocialLogin = () => {
         googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
-                const saveUser = { name: loggedInUser?.displayName, email: loggedInUser?.email, image: loggedInUser?.image}
+                const saveUser = { 
+                    name: loggedInUser?.displayName, 
+                    email: loggedInUser?.email, 
+                    image: loggedInUser?.image
+                }
+                console.log(saveUser);
                 fetch(`${import.meta.env.VITE_API_URL}/users`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
                     },
                     body: JSON.stringify(saveUser)
+                    
                 })
                     .then(res => res.json())
                     .then(() => {

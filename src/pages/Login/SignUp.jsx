@@ -23,7 +23,11 @@ const SignUp = () => {
                     updateUserProfile(data?.name, data?.photo)
                         .then(() => {
                             const savedUser = {
-                                name: data?.name, email: data?.email, image: data?.photo
+                                name: data?.name, 
+                                email: data?.email, 
+                                image: data?.photo,
+                                university: data?.university,
+                                address: data?.address,
                             }
                             fetch(`${import.meta.env.VITE_API_URL}/users`, {
                                 method: 'PUT',
@@ -151,6 +155,18 @@ const SignUp = () => {
                                     <span className="label-text">Photo</span>
                                 </label>
                                 <input placeholder="Photo URL" className="input input-bordered" {...register("photo")} />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">University</span>
+                                </label>
+                                <input placeholder="university" className="input input-bordered" {...register("university")} />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Address</span>
+                                </label>
+                                <input placeholder="address" className="input input-bordered" {...register("address")} />
                             </div>
 
                             <div className="form-control mt-6 w-1/2 mx-auto">
