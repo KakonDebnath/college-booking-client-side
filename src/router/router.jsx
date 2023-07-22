@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/Login/SignUp";
 import Profile from "../pages/Profile/Profile";
+import AllCollege from "../pages/colleges/Colleges";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { path: "/", element: <Home /> },
-            { path: "/colleges", element: <Home /> },
+            { path: "/colleges", element: <AllCollege /> },
             { path: "/admission", element: <Home /> },
             { path: "/my-college", element: <Home /> },
             { path: "/login", element: <Login /> },

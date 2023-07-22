@@ -1,0 +1,51 @@
+[
+    {
+      "collegeImage": "https://example.com/university1.jpg",
+      "collegeName": "University of Dhaka",
+      "admissionDates": "July 2023",
+      "events": "Upcoming events and activities at University of Dhaka...",
+      "researchHistory": "University of Dhaka research history and achievements...",
+      "sports": "Sports teams and achievements at University of Dhaka..."
+    },
+    {
+      "collegeImage": "https://example.com/university2.jpg",
+      "collegeName": "Bangladesh University of Engineering and Technology (BUET)",
+      "admissionDates": "August 2023",
+      "events": "Upcoming events and activities at BUET...",
+      "researchHistory": "BUET research history and achievements...",
+      "sports": "Sports teams and achievements at BUET..."
+    },
+    {
+      "collegeImage": "https://example.com/university3.jpg",
+      "collegeName": "University of Chittagong",
+      "admissionDates": "September 2023",
+      "events": "Upcoming events and activities at University of Chittagong...",
+      "researchHistory": "University of Chittagong research history and achievements...",
+      "sports": "Sports teams and achievements at University of Chittagong..."
+    },
+    {
+      "collegeImage": "https://example.com/university4.jpg",
+      "collegeName": "Bangladesh Agricultural University",
+      "admissionDates": "October 2023",
+      "events": "Upcoming events and activities at Bangladesh Agricultural University...",
+      "researchHistory": "Bangladesh Agricultural University research history and achievements...",
+      "sports": "Sports teams and achievements at Bangladesh Agricultural University..."
+    },
+    {
+      "collegeImage": "https://example.com/university5.jpg",
+      "collegeName": "Rajshahi University",
+      "admissionDates": "November 2023",
+      "events": "Upcoming events and activities at Rajshahi University...",
+      "researchHistory": "Rajshahi University research history and achievements...",
+      "sports": "Sports teams and achievements at Rajshahi University..."
+    },
+    {
+      "collegeImage": "https://example.com/university6.jpg",
+      "collegeName": "Khulna University",
+      "admissionDates": "December 2023",
+      "events": "Upcoming events and activities at Khulna University...",
+      "researchHistory": "Khulna University research history and achievements...",
+      "sports": "Sports teams and achievements at Khulna University..."
+    }
+  ]
+  
