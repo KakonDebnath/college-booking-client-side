@@ -1,36 +1,85 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import useAuth from "../../hooks/useAuth";
 
-const AllCollege = () => {
-    const { data: allCollege = [] } = useQuery({
-        queryKey: ['allCollege'],
-        queryFn: async () => {
-            const response = await axios(`${import.meta.env.VITE_API_URL}/allCollege`)
-            if (response) {
-                // console.log(response.data);
-            }
-            return response.data;
-        },
-    })
+import Navbar from "../../components/Shared/Navbar/Navbar";
+import Footer from "../../components/Shared/Footer/Footer";
+import Button from "../../components/Shared/Button/Button";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { useLocation } from "react-router-dom";
+import useAllColleges from "../../hooks/useColleges";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+const AllCollege = ({ slice }) => {
+    const location = useLocation();
+    const noHeaderFooter = location.pathname.includes("/colleges")
+    const [allCollege] = useAllColleges();
+
+    console.log(allCollege);
+
+    const handleClick = () => {
+        console.log("clicked");
+    }
 
     return (
         <>
-            <h1>All College</h1>
-            <div className="grid grid-cols-3 gap-5">
+            {!noHeaderFooter || <Navbar />}
+            <SectionTitle>All Colleges</SectionTitle>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {
-                    allCollege.map(college => <div key={college?._id} className="card w-96 bg-base-100 shadow-xl">
-                    <figure><img className="h-46 w-full" src={college?.collegeImage} alt="Shoes" /></figure>
-                    <div className="card-body">
-                      <h2 className="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>)
+                    slice ?
+                        allCollege.slice(0, 3).map(college =>
+                            <div key={college?._id} className="card max-w-96 mx-auto bg-base-100 shadow-xl px-3 sm:px-0">
+                                <figure>
+                                    <LazyLoadImage
+                                        className='w-full'
+                                        effect="blur"
+                                        src={college?.collegeImage}
+                                        delayTime={1000}
+                                    />
+                                </figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{college?.collegeName}</h2>
+                                    <div>
+                                        <p>Admission Date: {college?.admissionDates}</p>
+                                        <p>Events: {college?.events}</p>
+                                        <p>Research History: {college?.researchHistory}</p>
+                                    </div>
+                                    <div className="card-actions justify-end">
+                                        <Button>Details</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        ) :
+                        allCollege.map(college =>
+                            <div key={college?._id} className="card max-w-96 mx-auto bg-base-100 shadow-xl px-3 sm:px-0">
+                                <figure>
+                                    <LazyLoadImage
+                                        className="h-60 w-full"
+                                        src={college?.collegeImage}
+                                        effect="blur"
+                                        delayTime={500}
+                                    />
+                                </figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{college?.collegeName}</h2>
+                                    <div>
+                                        <p>Admission Date: {college?.admissionDates}</p>
+                                        <p>Events: {college?.events}</p>
+                                        <p>Research History: {college?.researchHistory}</p>
+                                    </div>
+                                    <div className="card-actions justify-end">
+                                        <Button path={`/collegeDetails/${college?._id}`} handleClick={handleClick}>Details</Button>
+                                    </div>
+                                </div>
+                            </div>)
                 }
             </div>
+            {
+                slice &&
+                <div className="flex justify-end my-5">
+                    <Button path={"/colleges"}>See More</Button>
+                </div>
+
+            }
+            {!noHeaderFooter || <Footer />}
         </>
     );
 };

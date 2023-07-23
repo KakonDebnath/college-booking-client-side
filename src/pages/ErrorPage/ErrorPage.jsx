@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../../components/Shared/Button/Button";
 
 
 const ErrorPage = () => {
@@ -9,7 +9,7 @@ const ErrorPage = () => {
                 <h4 className="text-3xl">Page not found</h4>
             </div>
             <div className="flex justify-center">
-                <Link to="/" className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded transition-all">Back To Home</Link>
+                <Button path={"/"}>Back To Home</Button>
             </div>
         </>
     );

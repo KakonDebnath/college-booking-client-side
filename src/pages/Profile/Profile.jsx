@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+
+import Button from "../../components/Shared/Button/Button";
 
 const Profile = (props) => {
     const { name, image, email, university, address } = props;
@@ -8,7 +9,7 @@ const Profile = (props) => {
             <h2 className="text-center text-3xl py-3 mb-5">My Profile</h2>
             <div className="bg-white p-4 shadow-xl rounded-lg w-1/2 mx-auto">
                 <div className="flex justify-end">
-                    <Link to="/" className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded transition-all">Edit Profile</Link>
+                    <Button>Edit Profile</Button>
                 </div>
                 <div className="text-center">
                     <img

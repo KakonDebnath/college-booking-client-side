@@ -1,12 +1,13 @@
 import Footer from "../../components/Shared/Footer/Footer";
 import Navbar from "../../components/Shared/Navbar/Navbar";
+import AllCollege from "../colleges/Colleges";
 
 
 const Home = () => {
     return (
         <div>
             <Navbar />
-            Home Page
+            <AllCollege slice={true}/>
             <Footer />
         </div>
     );

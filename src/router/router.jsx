@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/Login/SignUp";
 import Profile from "../pages/Profile/Profile";
 import AllCollege from "../pages/colleges/Colleges";
+import CollegeDetails from "../pages/colleges/CollegeDetails";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
             { path: "/colleges", element: <AllCollege /> },
             { path: "/admission", element: <Home /> },
             { path: "/my-college", element: <Home /> },
+            { path: "/collegeDetails/:id", element: <CollegeDetails /> },
             { path: "/login", element: <Login /> },
             { path: "/signUp", element: <SignUp /> },
             { path: "/profile", element: <Profile /> },
