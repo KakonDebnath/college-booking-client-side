@@ -43,7 +43,7 @@ const AllCollege = ({ slice }) => {
                                         <p>Research History: {college?.researchHistory}</p>
                                     </div>
                                     <div className="card-actions justify-end">
-                                        <Button>Details</Button>
+                                    <Button path={`/collegeDetails/${college?._id}`} handleClick={handleClick}>Details</Button>
                                     </div>
                                 </div>
                             </div>

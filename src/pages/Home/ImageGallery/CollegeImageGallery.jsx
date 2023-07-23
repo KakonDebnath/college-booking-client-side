@@ -1,5 +1,5 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const CollegeImageGallery = () => {
     const imageUrls = [
