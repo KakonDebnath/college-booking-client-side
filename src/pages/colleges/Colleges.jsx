@@ -29,7 +29,7 @@ const AllCollege = ({ slice }) => {
                             <div key={college?._id} className="card max-w-96 mx-auto bg-base-100 shadow-xl px-3 sm:px-0">
                                 <figure>
                                     <LazyLoadImage
-                                        className='w-full'
+                                        className='h-72 w-full'
                                         effect="blur"
                                         src={college?.collegeImage}
                                         delayTime={1000}
@@ -52,7 +52,7 @@ const AllCollege = ({ slice }) => {
                             <div key={college?._id} className="card max-w-96 mx-auto bg-base-100 shadow-xl px-3 sm:px-0">
                                 <figure>
                                     <LazyLoadImage
-                                        className="h-60 w-full"
+                                        className="h-72 w-full"
                                         src={college?.collegeImage}
                                         effect="blur"
                                         delayTime={500}

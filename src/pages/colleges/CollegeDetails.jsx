@@ -1,10 +1,9 @@
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import Button from '../../components/Shared/Button/Button';
 
 const CollegeDetails = () => {
     const { id } = useParams();
@@ -43,6 +42,7 @@ const CollegeDetails = () => {
                             <p>Admission Date: {collegeDetails?.admissionDates}</p>
                             <p>Events: {collegeDetails?.events}</p>
                             <p>Research History: {collegeDetails?.researchHistory}</p>
+                            <p>Sports: {collegeDetails?.sports}</p>
                         </div>
                     </div>
                 </div>
