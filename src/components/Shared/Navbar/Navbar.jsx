@@ -24,7 +24,7 @@ const Navbar = () => {
         <nav className="bg-blue-500 p-4 text-white">
             <div className="container mx-auto flex justify-between items-center">
                 <div>
-                    <Link to="/" className="text-white font-bold text-xl">Your Logo</Link>
+                    <Link to="/" className="text-white font-bold text-xl">Kabbo EduCare</Link>
                 </div>
                 <div className="hidden md:flex space-x-4">
                     {
