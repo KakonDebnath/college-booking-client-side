@@ -11,6 +11,7 @@ import Admission from "../pages/Admission/Admission";
 import BookCollege from "../pages/Admission/BookCollege";
 import MyCollege from "../pages/MyCollege/MyCollege";
 import Review from "../pages/MyCollege/Review";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -22,12 +23,12 @@ const router = createBrowserRouter([
             { path: "/colleges", element: <AllCollege /> },
             { path: "/admission", element: <Admission /> },
             { path: "/my-college", element: <MyCollege /> },
-            { path: "/collegeDetails/:id", element: <CollegeDetails /> },
-            { path: "/bookCollege/:id", element: <BookCollege /> },
-            { path: "/review/:id", element: <Review /> },
+            { path: "/collegeDetails/:id", element: <PrivateRoute><CollegeDetails /></PrivateRoute> },
+            { path: "/bookCollege/:id", element: <PrivateRoute><BookCollege /></PrivateRoute> },
+            { path: "/review/:id", element: <PrivateRoute><Review /></PrivateRoute> },
             { path: "/login", element: <Login /> },
             { path: "/signUp", element: <SignUp /> },
-            { path: "/profile", element: <Profile /> },
+            { path: "/profile", element: <PrivateRoute><Profile /></PrivateRoute> },
         ],
     },
   ]);
