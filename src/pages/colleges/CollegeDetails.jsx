@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import Navbar from '../../components/Shared/Navbar/Navbar';
+import Footer from '../../components/Shared/Footer/Footer';
 
 const CollegeDetails = () => {
     const { id } = useParams();
@@ -21,6 +23,7 @@ const CollegeDetails = () => {
 
     return (
         <>
+            <Navbar />
             <SectionTitle>Selected College Details</SectionTitle>
 
             <div className='border-2 rounded-xl p-10 w-1/2 mx-auto'>
@@ -47,6 +50,7 @@ const CollegeDetails = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

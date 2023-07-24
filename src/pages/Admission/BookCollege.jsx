@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../../components/Shared/Navbar/Navbar";
 import Footer from "../../components/Shared/Footer/Footer";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
@@ -11,11 +11,8 @@ import { useQuery } from "@tanstack/react-query";
 
 const BookCollege = () => {
     const { id } = useParams()
-    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    const { user, errorMsg, setErrorMsg } = useAuth();
-    // const location = useLocation()
-    // const navigate = useNavigate();
-    // let from = location.state?.from?.pathname || "/";
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { user, errorMsg, setErrorMsg, btnLoading, setBtnLoading } = useAuth();
 
     const { data: selectedCollege = [] } = useQuery({
         queryKey: ['selectedCollege'],
@@ -27,26 +24,34 @@ const BookCollege = () => {
             return response.data;
         },
     })
-console.log(selectedCollege);
+// console.log(selectedCollege);
     const onSubmit = (data) => {
         setErrorMsg("")
+        setBtnLoading(true);
         data.selectedCollegeName = selectedCollege?.collegeName;
         data.selectedCollegeImg = selectedCollege?.collegeImage;
         data.selectedCollegeId = id;
         console.log(data);
         axios.post(`${import.meta.env.VITE_API_URL}/addCollege`, data)
             .then((response) => {
+                Swal.fire(
+                    'Good job!',
+                    'Your Payment Successfully Done!',
+                    'success'
+                )
+                reset()
                 console.log('POST request successful:', response.data);
+                setBtnLoading(false);
             })
             .catch((error) => {
                 console.error('Error making POST request:', error);
+                setBtnLoading(false);
             });
     };
     return (
         <>
             <Navbar />
             <SectionTitle>Book College</SectionTitle>
-            id:{id}
             <div className="card flex-shrink-0 sm:w-8/12 w-full mx-auto shadow-2xl bg-base-100">
                 <div className="card-body">
                     {
@@ -104,7 +109,7 @@ console.log(selectedCollege);
                             <input placeholder="Photo URL" className="input input-bordered" {...register("photo")} />
                         </div>
                         <div className="form-control mt-6 w-1/2 mx-auto">
-                            <button type="submit" className="btn btn-warning">Submit</button>
+                            <button type="submit" className="btn btn-warning" disabled={btnLoading}>{btnLoading ? <>Submit <span className="loading loading-spinner text-primary"></span></> : "Submit"}</button>
                         </div>
                     </form>
                 </div>

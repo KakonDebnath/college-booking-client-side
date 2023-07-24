@@ -27,7 +27,7 @@ const MyCollege = () => {
             <Navbar />
             <SectionTitle>My Selected College</SectionTitle>
             {
-                myColleges?.map(mc =>
+                myColleges && Array.isArray(myColleges) && myColleges.length > 0 ? myColleges?.map(mc =>
                     <div key={mc?._id} className="flex items-center gap-4 border-2 rounded-xl hover:shadow-xl transition-all hover:bg-gray-50 w-3/4 mx-auto mb-3">
                 <div className="w-1/2 p-5">
                     <LazyLoadImage
@@ -47,8 +47,8 @@ const MyCollege = () => {
                     <h2>Address: {mc?.address}</h2>
                     <Button path={`/review/${mc?._id}`}>Add Review</Button>
                 </div>
-            </div>
-                    )
+            </div>):
+            <div>No Data Found</div>
             }
             <Footer />
         </>
