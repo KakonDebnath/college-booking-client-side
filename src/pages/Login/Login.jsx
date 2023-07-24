@@ -83,7 +83,7 @@ const Login = () => {
                                     </div>
                                 </div>
                             </div>
-
+                            <Link to={"/resetPass"} className="btn btn-link">Reset Password</Link>
 
                             <div className="form-control mt-6 w-1/2 mx-auto">
                                 <button type="submit" className="btn btn-warning">Login</button>
