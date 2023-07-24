@@ -45,7 +45,7 @@ const MyCollege = () => {
                     <h2>Date Of Birth: {mc?.dob}</h2>
                     <h2>Subject: {mc?.subject}</h2>
                     <h2>Address: {mc?.address}</h2>
-                    <Button path={`/review/${mc?._id}`}>Add Review</Button>
+                    <Button path={`/review/${mc?.selectedCollegeId}`}>Add Review</Button>
                 </div>
             </div>):
             <div>No Data Found</div>
