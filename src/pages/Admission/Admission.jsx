@@ -14,7 +14,7 @@ const Admission = () => {
             <div className="bg-gray-100 p-5 rounded-lg">
                 {
                     allCollege.map(college => 
-                    <Link key={college?._id} to={`/bookCollege/${college?._id}`} className="bg-gray-200 my-2 text-2xl p-2 rounded-lg hover:translate-x-5 hover:font-bold transition-all duration-300 block">{college?.collegeName}</Link>)
+                    <Link key={college?._id} to={`/bookCollege/${college?._id}`} className="bg-gray-200 my-2 md:text-2xl p-2 rounded-lg md:hover:translate-x-5 hover:font-bold transition-all duration-300 block">{college?.collegeName}</Link>)
                 }
             </div>
             <Footer />

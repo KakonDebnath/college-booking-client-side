@@ -108,7 +108,7 @@ const BookCollege = () => {
                             </label>
                             <input placeholder="Photo URL" className="input input-bordered" {...register("photo")} />
                         </div>
-                        <div className="form-control mt-6 w-1/2 mx-auto">
+                        <div className="form-control mt-6 w-2/4 mx-auto">
                             <button type="submit" className="btn btn-warning" disabled={btnLoading}>{btnLoading ? <>Submit <span className="loading loading-spinner text-primary"></span></> : "Submit"}</button>
                         </div>
                     </form>

@@ -28,17 +28,17 @@ const MyCollege = () => {
             <SectionTitle>My Selected College</SectionTitle>
             {
                 myColleges && Array.isArray(myColleges) && myColleges.length > 0 ? myColleges?.map(mc =>
-                    <div key={mc?._id} className="flex items-center gap-4 border-2 rounded-xl hover:shadow-xl transition-all hover:bg-gray-50 w-3/4 mx-auto mb-3">
-                <div className="w-1/2 p-5">
+                    <div key={mc?._id} className="md:flex items-center gap-4 border-2 rounded-xl hover:shadow-xl transition-all hover:bg-gray-50 w-full md:w-3/4 mx-auto mb-3 px-2">
+                <div className="md:w-1/2 p-5">
                     <LazyLoadImage
                         src={mc?.selectedCollegeImg}
-                        className="mx-auto w-1/2 rounded-lg"
+                        className="mx-auto w-full md:w-1/2 rounded-lg"
                         effect="blur"
                         delayTime={500}
                     />
-                    <h2 className="text-center text-2xl font-semibold">{mc?.selectedCollegeName}</h2>
+                    <h2 className="text-center md:text-2xl font-semibold">{mc?.selectedCollegeName}</h2>
                 </div>
-                <div className="text-lg space-y-2 py-5">
+                <div className="md:text-lg space-y-2 py-5">
                     <h2>Name: {mc?.name}</h2>
                     <h2>Email: {mc?.email}</h2>
                     <h2>Phone: {mc?.phone}</h2>

@@ -25,7 +25,7 @@ const Profile = () => {
         <>
             <Navbar />
             <h2 className="text-center text-3xl py-3 m-5">My Profile</h2>
-            <div className="bg-white p-4 shadow-xl rounded-lg w-1/2 mx-auto">
+            <div className="bg-white p-4 shadow-xl rounded-lg w-full md:w-1/2 mx-auto">
                 <div className="flex justify-end">
                     <Button path={`/updateProfile/${user?.email}`}>Edit Profile</Button>
                 </div>

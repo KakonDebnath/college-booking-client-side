@@ -26,7 +26,7 @@ const CollegeDetails = () => {
             <Navbar />
             <SectionTitle>Selected College Details</SectionTitle>
 
-            <div className='border-2 rounded-xl p-10 w-1/2 mx-auto'>
+            <div className='md:border-2 rounded-xl md:p-10 md:w-1/2 mx-auto'>
                 <div className="card mx-auto bg-base-100 shadow-xl px-3 sm:px-0 ">
                     <figure>
                         <LazyLoadImage
