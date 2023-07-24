@@ -28,9 +28,6 @@ const CollegeDetails = () => {
 
             <div className='border-2 rounded-xl p-10 w-1/2 mx-auto'>
                 <div className="card mx-auto bg-base-100 shadow-xl px-3 sm:px-0 ">
-                    {/* <figure>
-                        <img className="h-40 w-full" src={collegeDetails?.collegeImage} alt="Shoes" />
-                    </figure> */}
                     <figure>
                         <LazyLoadImage
                             className='w-full'

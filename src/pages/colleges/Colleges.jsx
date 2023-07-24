@@ -12,10 +12,8 @@ const AllCollege = ({ slice }) => {
     const noHeaderFooter = location.pathname.includes("/colleges")
     const [allCollege] = useAllColleges();
 
-    console.log(allCollege);
-
     const handleClick = () => {
-        console.log("clicked");
+      
     }
 
     return (
@@ -43,7 +41,7 @@ const AllCollege = ({ slice }) => {
                                         <p>Research History: {college?.researchHistory}</p>
                                     </div>
                                     <div className="card-actions justify-end">
-                                    <Button path={`/collegeDetails/${college?._id}`} handleClick={handleClick}>Details</Button>
+                                        <Button path={`/collegeDetails/${college?._id}`} handleClick={handleClick}>Details</Button>
                                     </div>
                                 </div>
                             </div>

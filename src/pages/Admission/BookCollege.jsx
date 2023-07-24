@@ -36,7 +36,7 @@ const BookCollege = () => {
             .then((response) => {
                 Swal.fire(
                     'Good job!',
-                    'Your Payment Successfully Done!',
+                    'Your Successfully Booked!',
                     'success'
                 )
                 reset()

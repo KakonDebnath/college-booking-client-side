@@ -12,6 +12,7 @@ import BookCollege from "../pages/Admission/BookCollege";
 import MyCollege from "../pages/MyCollege/MyCollege";
 import Review from "../pages/MyCollege/Review";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/Profile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
             { path: "/login", element: <Login /> },
             { path: "/signUp", element: <SignUp /> },
             { path: "/profile", element: <PrivateRoute><Profile /></PrivateRoute> },
+            { path: "/updateProfile/:email", element: <PrivateRoute><UpdateProfile /></PrivateRoute> },
         ],
     },
   ]);
